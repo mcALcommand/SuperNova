@@ -1,0 +1,162 @@
+{
+  "description": "射撃特性:破裂",
+  "supported_items": "minecraft:air",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 0,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "direct_attacker",
+          "predicate": {
+            "type": "#minecraft:arrows"
+          }
+        },
+        "effect": {
+          "type": "minecraft:explode",
+          "damage_type": "minecraft:player_explosion",
+          "radius": 0,
+          "block_interaction": "none",
+          "small_particle": {
+            "type": "minecraft:explosion"
+          },
+          "large_particle": {
+            "type": "minecraft:explosion"
+          },
+          "sound": "minecraft:entity.generic.explode"
+        },
+        "enchanted": "attacker",
+        "affected": "damaging_entity"
+      }
+    ],
+    "minecraft:damage": [
+      {
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "equipment": {
+                  "mainhand": {
+                    "components": {
+                      "minecraft:custom_model_data": {
+                        "strings": [
+                          "charge0"
+                        ]
+                      }
+                    },
+                    "predicates": {
+                      "minecraft:custom_data": "{mode:sniper}"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "type": "#minecraft:arrows"
+              }
+            }
+          ]
+        },
+        "effect": {
+          "type": "minecraft:add",
+          "value": 100
+        }
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "equipment": {
+                  "mainhand": {
+                    "components": {
+                      "minecraft:custom_model_data": {
+                        "strings": [
+                          "charge1"
+                        ]
+                      }
+                    },
+                    "predicates": {
+                      "minecraft:custom_data": "{mode:sniper}"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "type": "#minecraft:arrows"
+              }
+            }
+          ]
+        },
+        "effect": {
+          "type": "minecraft:add",
+          "value": 450
+        }
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "equipment": {
+                  "mainhand": {
+                    "components": {
+                      "minecraft:custom_model_data": {
+                        "strings": [
+                          "charge2"
+                        ]
+                      }
+                    },
+                    "predicates": {
+                      "minecraft:custom_data": "{mode:sniper}"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "type": "#minecraft:arrows"
+              }
+            }
+          ]
+        },
+        "effect": {
+          "type": "minecraft:add",
+          "value": 1000
+        }
+      }
+    ]
+  }
+}

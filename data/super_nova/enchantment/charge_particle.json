@@ -1,0 +1,68 @@
+{
+    "description": "強化魔法です!",
+    "supported_items": "minecraft:air",
+    "weight": 1,
+    "max_level": 1,
+    "min_cost": {
+      "base": 0,
+      "per_level_above_first": 0
+    },
+    "max_cost": {
+      "base": 0,
+      "per_level_above_first": 0
+    },
+    "anvil_cost": 0,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:tick": [
+        {
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "mainhand": {
+                  "components": {
+                    "minecraft:custom_model_data": {
+                      "strings": [
+                        "charge1"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "super_nova:enchantment/charge/particle_charge_1"
+          }
+        },
+        {
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "mainhand": {
+                  "components": {
+                    "minecraft:custom_model_data": {
+                      "strings": [
+                        "charge2"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "super_nova:enchantment/charge/particle_charge_2"
+          }
+        }
+      ]
+    }
+  }

@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "nnq",
+    "bln",
+    "ieg"
+  ],
+  "key": {
+    "n": "minecraft:netherite_ingot",
+    "q": "minecraft:quartz_block",
+    "b": "minecraft:black_stained_glass_pane",
+    "l": "minecraft:blue_concrete",
+    "i": "minecraft:iron_block",
+    "e": "minecraft:nether_star",
+    "g": "minecraft:gray_concrete"
+  },
+  "result": {
+    "id": "bow",
+    "components": {
+      "minecraft:item_name": "\"光の剣:スーパーノヴァ\"",
+      "minecraft:item_model": "supernova_railgun:super_nova",
+      "minecraft:custom_model_data": {
+        "strings": [
+          "charge0"
+        ]
+      },
+      "minecraft:max_damage": 500,
+      "minecraft:damage": 500,
+      "minecraft:equippable": {
+        "slot": "head"
+      },
+      "minecraft:rarity": "rare",
+      "minecraft:enchantment_glint_override": false,
+      "minecraft:custom_data": "{mode:\"normal\",SuperNova:true}",
+      "minecraft:enchantments": {
+        "super_nova:fire": 1,
+        "super_nova:mode_change": 1,
+        "super_nova:charge_particle": 1,
+        "super_nova:passive_charge": 1,
+        "super_nova:mode/piercing": 1
+      },
+      "minecraft:use_cooldown": {
+        "seconds": 1,
+        "cooldown_group": "supernova"
+      }
+    },
+    "count": 1
+  },
+  "show_notification": true
+}

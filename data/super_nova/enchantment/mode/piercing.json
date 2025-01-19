@@ -1,0 +1,161 @@
+{
+    "description": "射撃特性:貫通",
+    "supported_items": "minecraft:air",
+    "weight": 1,
+    "max_level": 1,
+    "min_cost": {
+      "base": 0,
+      "per_level_above_first": 0
+    },
+    "max_cost": {
+      "base": 0,
+      "per_level_above_first": 0
+    },
+    "anvil_cost": 0,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:projectile_piercing": [
+        {
+          "effect": {
+            "type": "minecraft:set",
+            "value": 100
+          }
+        }
+      ],
+      "minecraft:damage": [
+        {
+          "requirements": {
+            "condition": "minecraft:all_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "attacker",
+                "predicate": {
+                  "equipment": {
+                    "mainhand": {
+                      "components": {
+                        "minecraft:custom_model_data": {
+                          "strings": [
+                            "charge0"
+                          ]
+                        }
+                      },
+                      "predicates": {
+                        "minecraft:custom_data": "{mode:normal}"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "direct_attacker",
+                "predicate": {
+                  "type": "#minecraft:arrows"
+                }
+              }
+            ]
+          },
+          "effect": {
+            "type": "minecraft:add",
+            "value": 40
+          }
+        },
+        {
+          "requirements": {
+            "condition": "minecraft:all_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "attacker",
+                "predicate": {
+                  "equipment": {
+                    "mainhand": {
+                      "components": {
+                        "minecraft:custom_model_data": {
+                          "strings": [
+                            "charge1"
+                          ]
+                        }
+                      },
+                      "predicates": {
+                        "minecraft:custom_data": "{mode:normal}"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "direct_attacker",
+                "predicate": {
+                  "type": "#minecraft:arrows"
+                }
+              }
+            ]
+          },
+          "effect": {
+            "type": "minecraft:add",
+            "value": 160
+          }
+        },
+        {
+          "requirements": {
+            "condition": "minecraft:all_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "attacker",
+                "predicate": {
+                  "equipment": {
+                    "mainhand": {
+                      "components": {
+                        "minecraft:custom_model_data": {
+                          "strings": [
+                            "charge2"
+                          ]
+                        }
+                      },
+                      "predicates": {
+                        "minecraft:custom_data": "{mode:normal}"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "direct_attacker",
+                "predicate": {
+                  "type": "#minecraft:arrows"
+                }
+              }
+            ]
+          },
+          "effect": {
+            "type": "minecraft:add",
+            "value": 300
+          }
+        }
+      ],
+      "minecraft:post_attack": [
+        {
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "direct_attacker",
+            "predicate": {
+              "type": "#minecraft:arrows"
+            }
+          },
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "super_nova:enchantment/fire/piercing_decay"
+          },
+          "enchanted": "attacker",
+          "affected": "damaging_entity"
+        }
+      ]
+    }
+  }
